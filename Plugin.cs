@@ -11,7 +11,10 @@ namespace XNet.Emby.Plugins.AutoMediaCleaner
     {
         public Plugin(IApplicationPaths applicationPaths, IXmlSerializer xmlSerializer) : base(applicationPaths, xmlSerializer)
         {
+            Instance = this;
         }
+
+        public static Plugin Instance { get; private set; }
 
         public override Guid Id => new Guid("e4aa099e-ce35-4dca-b596-cebf13e05598");
         public override string Name => "XNet Emby AutoMediaCleaner Plugin";
